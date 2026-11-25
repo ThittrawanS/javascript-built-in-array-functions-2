@@ -374,5 +374,12 @@ const bills = [
 ];
 
 // Start coding here
+const totalPaidByLocation = bills.reduce((accumulator, bill) => {
+  if (accumulator[bill.location] === undefined) {
+    accumulator[bill.location] = 0;
+  }
+  accumulator[bill.location] += bill.total;
+  return accumulator;
+}, {});
 
-const totalPaidByLocation;
+console.log(totalPaidByLocation);
